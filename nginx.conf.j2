@@ -1,0 +1,10 @@
+server {
+    listen      {{ 'PORT' | env }};
+    server_name {{ 'LISTENING_ADDR' | env }};
+
+    location / {
+        proxy_pass {{ 'PROXY_URL' | env }};
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
