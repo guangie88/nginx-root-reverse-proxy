@@ -1,0 +1,5 @@
+server {
+    listen      {{ 'PORT' | env }};
+    server_name {{ 'LISTENING_ADDR' | env }};
+    rewrite ^   {{ 'REWRITE_URL' | env }};
+}
