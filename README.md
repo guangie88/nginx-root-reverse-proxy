@@ -1,6 +1,6 @@
 # `nginx-root-reverse-proxy`
 
-Dockerfile setup to have Nginx perform rewrite server name rewrite to have reverse proxy at root level.
+Dockerfile setup to have Nginx perform reverse proxy at root level.
 
 ## Command to run
 
@@ -10,6 +10,6 @@ docker run -d --rm -it \
     -p 80:80 \
     -e PORT=80 \
     -e LISTENING_ADDR=localhost \
-    -e REWRITE_URL=https://www.google.com \
+    -e PROXY_URL=http://www.google.com \
     guangie88/nginx-root-reverse-proxy:latest
 ```
